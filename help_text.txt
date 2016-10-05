@@ -1,0 +1,93 @@
+In Terminal :
+
+mahiti@mahiti-B85M-D3H:~/PracticeProjects/MyOauth$ curl -X POST -d "grant_type=password&client_id=zKVfsuDNvyphgJLwyF3qAGwfpPz7XGhGiasq5gR8&client_secret=5PgfwZTl5wf5EodlTKaCvNbU58xm51nPqvX1iMmCsnITGFzBHuFRh6uompk70RN6zZff1xE9TDTSSJRimfYR4AchbxiafEF5fVgbiOGp6kSkbniT1gtR8OEthpRFFGqO&username=pavankumar&password=123456" http://127.0.0.1:8000/o/token/
+
+
+Output : 
+
+{"access_token": "e7eLj5liu0xMtPTT53qIygOzF3I76y", "token_type": "Bearer", "expires_in": 300, "refresh_token": "aPDGHYnujC4PyjAxNKJ3TrZiEcRAe5", "scope": "read write"}
+
+
+
+CURL Syntax : 
+
+curl -X POST -d "grant_type=password -u"<client_id>:<client_secret>" url(http://localhost:8005/o/token/)
+
+================================================================================
+
+In Rest Client :
+
+
+Raw Headers : 
+
+Content-Type: application/x-www-form-urlencoded
+
+
+Raw Data :
+
+grant_type=password&client_id=zKVfsuDNvyphgJLwyF3qAGwfpPz7XGhGiasq5gR8&client_secret=5PgfwZTl5wf5EodlTKaCvNbU58xm51nPqvX1iMmCsnITGFzBHuFRh6uompk70RN6zZff1xE9TDTSSJRimfYR4AchbxiafEF5fVgbiOGp6kSkbniT1gtR8OEthpRFFGqO&username=pavankumar&password=123456
+
+
+{
+"access_token": "msGXpdZZE82ivPPXPZaxEoZ31WFW8f"
+"token_type": "Bearer"
+"expires_in": 300
+"refresh_token": "XW67e3Vd3fxElLkOpP7PIGDxYrvl9Z"
+"scope": "read write"
+}
+
+
+================================================================================
+
+Data Retrival 
+
+URL : http://127.0.0.1:8005/api/todos/
+
+Header Format :
+
+Content-Type: application/x-www-form-urlencoded
+Authorization: bearer TFAGiwqvBtjNyvw1iDcfk0MWRpg2sz
+
+Ex : Authorization : bearer <access_token>
+
+Output : 
+
+[1]
+0:  {
+"id": 1
+"description": "Pavan description"
+"done": true
+}
+
+================================================================================
+
+Link
+
+http://stackoverflow.com/questions/30855991/django-drf-with-oauth2-using-dot-django-oauth-toolkit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
